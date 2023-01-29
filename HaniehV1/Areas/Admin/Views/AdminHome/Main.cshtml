@@ -1,0 +1,48 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/Admin/main.css">
+    <title>Admin</title>
+</head>
+<body>
+    <div class="header">
+        <div class="left-sec">
+            <a class="a-burger" href="#">
+                <img src="/icon/hamburger-menu.svg" class="burger-logo">
+            </a>
+            <img src="/icon/youtube-logo.svg" class="hanieh-logo">
+        </div>
+        <div class="middle-sec">
+            <div class="title-web">HANIEH</div>
+        </div>
+        <div class="right-sec"></div>
+    </div>
+    <div class="main-container">
+        <div class="btns-div">
+            <a asp-area="Admin" asp-controller="AdminHome" asp-action="About">
+                <button class="upload-Paint-btn">
+                    Upload Paint
+                </button>
+            </a>
+            <a href="#">
+                <button class="all-Paints-btn">
+                    See All Paints
+                </button>
+            </a>
+            <a href="#">
+                <button class="main-web-page-btn">
+                    Go to web seit
+                </button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
