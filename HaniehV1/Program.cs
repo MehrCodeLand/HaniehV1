@@ -1,3 +1,5 @@
+using Core.Repository.AdminRepo;
+using Core.Servises.AdminSer;
 using Data.MyDbFile;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,6 +10,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<MyDb>(options => options.UseSqlServer(
         builder.Configuration.GetConnectionString("strCon")
     ));
+builder.Services.AddScoped<IAdminService, AdminRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
