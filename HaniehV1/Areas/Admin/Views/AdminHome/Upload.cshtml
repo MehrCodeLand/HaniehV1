@@ -5,3 +5,50 @@
     Layout = null;
 }
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/Admin/upload.css">
+    <title>Uplaod Page</title>
+</head>
+<body>
+    <div class="header">
+        <div class="left-sec">
+            <a class="a-burger" href="#">
+                <img src="/icon/hamburger-menu.svg" class="burger-logo">
+            </a>
+            <img src="/icon/youtube-logo.svg" class="hanieh-logo">
+        </div>
+        <div class="middle-sec">
+            <div class="title-web">HANIEH</div>
+        </div>
+        <div class="right-sec"></div>
+    </div>
+
+    <div class="main-div">
+        <form class="upload-form" runat="server" method="post" enctype="multipart/form-data">
+            <div class="title-group">
+                <label class="paint-title-label" for="title">Paint's Title</label>
+                <input asp-for="PaintName" class="paint-title" id="title" type="text">
+            </div>
+
+            <div class="des-group">
+                <label for="description">Description</label>
+                <textarea asp-for="Description" class="textarea-1" name="description" id="description" cols="30" rows="10"></textarea>
+            </div>
+            <div class="upload-group">
+                <input asp-for="UploadImage" class="paint-upload" type="file">
+                <button class="paint-upload-btn" type="submit">Upload</button>
+                <div class="side-btn">
+                    <a asp-area="Admin" asp-controller="AdminHome" asp-action="Main">
+                        <button class="cancel-btn">Cancel</button>
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

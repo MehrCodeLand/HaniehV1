@@ -1,0 +1,159 @@
+body {
+    margin: 0px ;
+    font-family: Arial, Helvetica, sans-serif;
+}
+a {
+    text-decoration: none;
+}
+a:active {
+    color: black ;
+}
+button {
+    cursor: pointer;
+    transition: opacity 0.15s , background-color 0.15s ;
+}
+button:hover {
+    background-color: rgb(231, 231, 231)
+}
+button:active {
+    opacity: 80% ;
+}
+
+.header {
+    height: 100px ;
+
+    display: flex ;
+    flex-direction: row;
+    justify-content: space-between ;
+    align-items: center ;
+    background-color: lightsteelblue;
+}
+.left-sec {
+    height: 100px ;
+    flex: 1;
+
+    display: flex ;
+    flex-direction: row;
+    justify-content: center ;
+    align-items: center ;
+}
+.hanieh-logo {
+    height: 20px ;
+    margin-left: 10px ;
+    margin-right: 10px ;
+}
+.burger-logo {
+    height: 25px ;
+    margin-left: 10px ;
+    margin-right: 10px ;
+}
+
+.middle-sec {
+    height: 100px ;
+    flex: 1;
+
+    display: flex ;
+    flex-direction: row;
+    justify-content: center ;
+    align-items: center ;
+}
+.title-web {
+    padding: 10px ;
+    font-size: 20px ;
+}
+.right-sec {
+    height: 100px ;
+    flex: 1;
+
+    display: flex ;
+    flex-direction: row;
+    justify-content: center ;
+    align-items: center ;
+}
+
+
+.main-div {
+
+    display: flex ;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px ;
+    padding: 5px ;
+}
+.upload-form {
+    background-color: lightsteelblue;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px ;
+    margin-top: 30px ;
+
+    padding: 25px ;
+    flex: 1 ;
+    border-radius: 5px ;
+    max-width: 700px  ;
+}
+input {
+    padding: 8px 30px  ;
+    border: none ;
+    border-radius: 2px ;
+    margin-left: 5px ;
+}
+label {
+    font-weight: bold ;
+    margin: 0px ;
+}
+.title-group {
+    display: flex ;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px ;
+}
+.des-group {
+    display: flex ;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px ;
+}
+.paint-description {
+    height: 100px ;
+    border: none ;
+}
+button {
+    padding: 8px 20px ;
+    margin-top: 10px ;
+    border: none ;
+}
+.upload-group {
+    display: flex ;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px ;
+}
+.paint-upload {
+    padding: 10px 15px ;
+}
+
+textarea {
+    font-size: 15px ;
+    font-weight: bold ;
+    margin-left: 5px ;
+    border: none ;
+    border-radius: 3px ;
+}
+/* .paint-title {
+    padding: 8px 30px  ;
+    border: none ;
+    border-radius: 2px ;
+    margin-left: 5px ;
+} */
+/* .paint-title-label {
+    font-weight: bold ;
+    margin: 0px ;
+} */
