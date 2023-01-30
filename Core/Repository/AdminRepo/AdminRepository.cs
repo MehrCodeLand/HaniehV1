@@ -13,8 +13,8 @@ namespace Core.Repository.AdminRepo
         public bool CheckPaint(UploadVm upload)
         {
             if (upload == null) { return false; }
+            else if(upload.PaintName == null ) { return false; }
             else if(upload.Description.Length < 10) { return false; }
-            else if(upload.ImagePaintName == null) { return false; }
             else if(upload.UploadImage == null ) { return false; }
 
             return true;

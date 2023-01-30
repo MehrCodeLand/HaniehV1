@@ -10,7 +10,6 @@ namespace Data.ViewModels
     public class UploadVm
     {
         public string PaintName { get; set; }
-        public string ImagePaintName { get; set; }
         public string Description { get; set; }
         public string PaintImageName { get; set; }
         public IFormFile UploadImage { get; set; }
