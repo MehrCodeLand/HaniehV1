@@ -66,7 +66,7 @@ namespace Core.Repository.AdminRepo
             {
                 string imagePath = "";
                 upload.PaintImageName = NameGenerator.GenerateUniqCode() + Path.GetExtension(upload.UploadImage.FileName);
-                imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/paintImage", upload.PaintName + ".jpg");
+                imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/paintImage",  upload.PaintImageName);
                 using ( var stream = new FileStream(imagePath, FileMode.Create ))
                 {
                     upload.UploadImage.CopyTo(stream);
@@ -79,9 +79,19 @@ namespace Core.Repository.AdminRepo
         }
         #endregion
 
+        
         public void Save()
         {
             _db.SaveChanges();
+        }
+
+        public AllPaintsVm AllPaints()
+        {
+            IQueryable<Paint> result = _db.Paints;
+
+            AllPaintsVm allPaints = new AllPaintsVm();
+            allPaints.Paints = result.OrderBy(u => u.Created).ToList();
+            return allPaints;
         }
     }
 }

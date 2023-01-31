@@ -1,0 +1,59 @@
+﻿@using Data.ViewModels
+@model AllPaintsVm
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/Admin/seeAllPaints.css" rel="stylesheet">
+    <title>All paints</title>
+</head>
+<body>
+    <div class="header">
+        <div class="left-sec">
+            <a class="a-burger" href="#">
+                <img src="/icon/hamburger-menu.svg" class="burger-logo">
+            </a>
+            <img src="/icon/youtube-logo.svg" class="hanieh-logo">
+        </div>
+        <div class="middle-sec">
+            <div class="title-web">HANIEH</div>
+        </div>
+        <div class="right-sec"></div>
+    </div>
+
+    <div class="main-div">
+        <ul class="paint-list">
+            <ol>
+                @foreach( var paint in Model.Paints ){
+
+                <div class="paint-obj">
+                    <img src="/paintImage/@paint.ImagePaintName" class="img-obj">
+                    <p class="title-obj">@paint.PaintName</p>
+                    <p class="date-obj">@paint.Created</p>
+                    <a href="#">
+                        <button class="edit-btn">Edit</button>
+                    </a>
+                    <a href="#">
+                        <button class="delete-btn">Delete</button>
+                    </a>
+                </div>
+
+                }
+            </ol>
+        </ul>
+        <div class="extra-btn">
+            <a href="#">
+                <button>Main Page</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

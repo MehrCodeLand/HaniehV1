@@ -13,6 +13,7 @@ namespace Core.Servises.AdminSer
         void AddPaint(UploadVm upload);
         bool IsAddPaint(int paintId);
         string SaveImage(UploadVm upload);
+        AllPaintsVm AllPaints();
         void Save();
 
     }

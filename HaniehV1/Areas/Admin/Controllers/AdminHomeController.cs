@@ -14,6 +14,7 @@ namespace HaniehV1.Areas.Admin.Controllers
         }
 
 
+
         public IActionResult Main() => View();
 
 
@@ -39,5 +40,15 @@ namespace HaniehV1.Areas.Admin.Controllers
         }
 
         #endregion
+
+
+
+        [Route("AllPaint")]
+        public IActionResult AllPaint()
+        {
+            AllPaintsVm allPaints = _admin.AllPaints();
+            return View(allPaints);
+        }
+        
     }
 }
