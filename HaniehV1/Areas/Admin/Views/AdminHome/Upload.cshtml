@@ -52,17 +52,11 @@
             <div class="upload-group">
                 <input asp-for="UploadImage" class="paint-upload" type="file">
                 <button class="paint-upload-btn" type="submit">Upload</button>
+                <a asp-area="Admin" asp-controller="AdminHome" asp-action="Main">
+                    <button type="button" class="cancel-btn">Back</button>
+                </a>
             </div>
         </form>
-        <div class="side-btn">
-            <a asp-area="Admin" asp-controller="AdminHome" asp-action="Main">
-                <button class="cancel-btn">Cancel</button>
-            </a>
-        </div>
     </div>
-
-
-    <script>
-    </script>
 </body>
 </html>

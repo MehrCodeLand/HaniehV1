@@ -1,0 +1,124 @@
+body {
+    margin: 0px ;
+    font-family: Arial, Helvetica, sans-serif;
+}
+a {
+    text-decoration: none;
+}
+a:active {
+    color: black ;
+}
+button {
+    cursor: pointer;
+    transition: opacity 0.15s , background-color 0.15s ;
+}
+button:hover {
+    background-color: rgb(231, 231, 231)
+}
+button:active {
+    opacity: 80% ;
+}
+
+.header {
+    height: 100px ;
+
+    display: flex ;
+    flex-direction: row;
+    justify-content: space-between ;
+    align-items: center ;
+    background-color: lightsteelblue;
+}
+.left-sec {
+    height: 100px ;
+    flex: 1;
+
+    display: flex ;
+    flex-direction: row;
+    justify-content: center ;
+    align-items: center ;
+}
+.hanieh-logo {
+    height: 20px ;
+    margin-left: 10px ;
+    margin-right: 10px ;
+}
+.burger-logo {
+    height: 25px ;
+    margin-left: 10px ;
+    margin-right: 10px ;
+}
+
+.middle-sec {
+    height: 100px ;
+    flex: 1;
+
+    display: flex ;
+    flex-direction: row;
+    justify-content: center ;
+    align-items: center ;
+}
+.title-web {
+    padding: 10px ;
+    font-size: 20px ;
+}
+.right-sec {
+    height: 100px ;
+    flex: 1;
+
+    display: flex ;
+    flex-direction: row;
+    justify-content: center ;
+    align-items: center ;
+}
+
+
+.main-section {
+    display: flex ;
+    flex-direction: row;
+    justify-content:center ;
+
+    margin-top: 50px ;
+}
+.myTable {
+    background-color: lightsteelblue;
+    border-radius: 8px ;
+    flex: 5;
+    padding: 15px ;
+}
+.main-left {
+    flex: 1;
+    height: unset ;
+}
+.main-right {
+    flex: 1;
+    height: unset ;
+}
+.paint-img {
+    height: 45px ;
+    border-radius: 3px ;
+}
+.title-paint {
+    font-size: 1.2rem;
+}
+td {
+    text-align: center;
+}
+.table-staff {
+    flex: 6;
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+button {
+    padding: 7px 20px ;
+    border: none ;
+    border-radius: 2px ;
+}
+.delete-btn {
+    background-color: lightcoral;
+    margin-left: 5px ;
+}
+.edit-btn {
+    background-color: lightgoldenrodyellow;
+}

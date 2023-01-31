@@ -43,12 +43,32 @@ namespace HaniehV1.Areas.Admin.Controllers
 
 
 
+        #region All paints
+
         [Route("AllPaint")]
         public IActionResult AllPaint()
         {
             AllPaintsVm allPaints = _admin.AllPaints();
             return View(allPaints);
         }
-        
+
+        #endregion
+
+        #region Edit and Delete
+
+        [Route("EditPaint")]
+        public IActionResult EditPaint( int id)
+        {
+            return View();
+        }
+
+        [Route("DeletePaint")]
+        public IActionResult DeletePaint( int id)
+        {
+            return View();
+        }
+
+        #endregion
+
     }
 }
