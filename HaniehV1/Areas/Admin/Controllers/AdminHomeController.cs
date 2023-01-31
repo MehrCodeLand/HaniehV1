@@ -17,6 +17,8 @@ namespace HaniehV1.Areas.Admin.Controllers
         public IActionResult Main() => View();
 
 
+        #region Upload
+
         [Route("Upload")]
         public IActionResult Upload() => View();
 
@@ -29,9 +31,13 @@ namespace HaniehV1.Areas.Admin.Controllers
             {
                 return View();
             }
-            // time to add Paint
 
-            return View(upload);
+            // time to add Paint
+            _admin.AddPaint(upload);
+            ViewBag.IsAdd = _admin.CheckPaint(upload);
+            return View();
         }
+
+        #endregion
     }
 }

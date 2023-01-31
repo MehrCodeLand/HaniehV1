@@ -30,6 +30,7 @@
   <ItemGroup>
     <Folder Include="Areas\Main\Controllers\" />
     <Folder Include="Areas\Main\Views\" />
+    <Folder Include="wwwroot\paintImage\" />
   </ItemGroup>
 
   <ItemGroup>

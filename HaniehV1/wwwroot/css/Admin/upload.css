@@ -174,9 +174,22 @@ textarea {
     margin-left: 10px ;
     margin-top: 10px ;
 }
-.alert-h {
-    flex: 1 ;
-    font-size: 15px ;
+.html-alert-create {
+    position: fixed;
+    height: 70px;
+    width: 100px;
+    background-color: lightgreen ;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    padding: 10px ;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.alert-h {
+    flex: 1;
+    font-size: 15px;
+    align-items: center;
+    padding: 10px;
 }

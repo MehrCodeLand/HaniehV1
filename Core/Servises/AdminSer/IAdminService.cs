@@ -10,5 +10,10 @@ namespace Core.Servises.AdminSer
     public interface IAdminService
     {
         bool CheckPaint(UploadVm upload);
+        void AddPaint(UploadVm upload);
+        bool IsAddPaint(int paintId);
+        string SaveImage(UploadVm upload);
+        void Save();
+
     }
 }
