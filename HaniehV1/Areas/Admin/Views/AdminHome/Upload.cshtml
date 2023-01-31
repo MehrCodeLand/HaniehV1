@@ -15,6 +15,11 @@
     <title>Uplaod Page</title>
 </head>
 <body>
+    @if (ViewBag.IsCorrect == false ){
+        <div class="html-alert">
+            <div class="alert-h">Some data is not correct!</div>
+        </div>
+    }
     <div class="header">
         <div class="left-sec">
             <a class="a-burger" href="#">
@@ -50,5 +55,8 @@
             </div>
         </form>
     </div>
+
+    <script>
+    </script>
 </body>
 </html>

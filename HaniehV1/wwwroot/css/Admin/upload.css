@@ -157,3 +157,26 @@ textarea {
     font-weight: bold ;
     margin: 0px ;
 } */
+
+
+.html-alert {
+    position: fixed;
+    height: 70px ;
+    width: 100px ;
+    background-color: lightcoral;
+    color: black ;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: 10px ;
+    margin-top: 10px ;
+}
+.alert-h {
+    flex: 1 ;
+    font-size: 15px ;
+    align-items: center;
+    padding: 10px ;
+}

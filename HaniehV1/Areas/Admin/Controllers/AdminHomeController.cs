@@ -30,6 +30,7 @@ namespace HaniehV1.Areas.Admin.Controllers
                 return View();
             }
             // time to add Paint
+
             return View(upload);
         }
     }
