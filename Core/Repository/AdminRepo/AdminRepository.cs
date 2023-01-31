@@ -79,12 +79,7 @@ namespace Core.Repository.AdminRepo
         }
         #endregion
 
-        
-        public void Save()
-        {
-            _db.SaveChanges();
-        }
-
+        #region Delete
         public AllPaintsVm AllPaints()
         {
             IQueryable<Paint> result = _db.Paints;
@@ -131,6 +126,34 @@ namespace Core.Repository.AdminRepo
             }
 
             return true;
+        }
+        #endregion
+
+        
+        public void Save()
+        {
+            _db.SaveChanges();
+        }
+
+
+
+        public EditPaintVm GetPaintEdit(int paintId)
+        {
+            Paint paint = _db.Paints.SingleOrDefault(u => u.PaintId == paintId);
+            if( paint != null)
+            {
+                EditPaintVm editPaint = new EditPaintVm()
+                {
+                    NewDescription = paint.Description,
+                    NewPaintName = paint.PaintName,
+                    oldImageName = paint.ImagePaintName,
+                    PaintId = paint.PaintId,
+                };
+
+                return editPaint;
+            }
+
+            return null;
         }
     }
 }

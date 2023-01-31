@@ -59,16 +59,35 @@ namespace HaniehV1.Areas.Admin.Controllers
         [Route("EditPaint")]
         public IActionResult EditPaint( int id)
         {
-            return View();
+            EditPaintVm paintVm = _admin.GetPaintEdit(id);
+            if(paintVm != null)
+            {
+                return View(paintVm);
+            }
+            return NotFound();
         }
 
+        [Route("EditPaint")]
+        [HttpPost]
+        public IActionResult EditPaint(EditPaintVm editPaint)
+        {
+            // time to edit page and ...
+            // when we delete, wir sollen delete bild!
+            return View();
+        }
 
 
         [Route("DeletePaint")]
         public IActionResult DeletePaint( int id)
         {
             DeletePaintVm deletePaint = _admin.GetPaintDelete(id);
-            return View(deletePaint);
+            if(deletePaint != null)
+            {
+                return View(deletePaint);
+
+            }
+
+            return NotFound();
         }
 
         [Route("DeletePaint")]
@@ -77,6 +96,7 @@ namespace HaniehV1.Areas.Admin.Controllers
         {
             _admin.DeletePaint(deletePaint.PainyId);
             bool result  = _admin.IsDeletePaint(deletePaint.PainyId);
+
             if(result != true)
             {
                 ViewBag.IsDeletePaint = false;

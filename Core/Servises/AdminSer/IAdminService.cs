@@ -17,6 +17,7 @@ namespace Core.Servises.AdminSer
         DeletePaintVm GetPaintDelete(int id);
         void DeletePaint(int paintId);
         bool IsDeletePaint(int paintId);
+        EditPaintVm GetPaintEdit(int paintId);
         void Save();
 
     }
