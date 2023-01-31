@@ -1,4 +1,5 @@
-﻿
+﻿@using Data.ViewModels
+@model DeletePaintVm
 @{
     Layout = null;
 }
@@ -28,10 +29,10 @@
 
     <div class="main-div">
         <div class="left-d"></div>
-        <form class="form-c">
-            <img class="img-del" src="/img/MU9.png">
-            <input value="" hidden>
-            <input type="text" readonly>
+        <form class="form-c" method="post">
+            <img class="img-del" src="/paintImage/@Model.PaintImageName">
+            <input asp-for="PainyId" value="@Model.PainyId" hidden>
+            <input type="text" value="@Model.PaintName" readonly>
             <button type="submit">Delete</button>
             <a href="#">
                 <button class="cancel-btn">Cancel</button>

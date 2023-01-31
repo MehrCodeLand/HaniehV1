@@ -62,11 +62,32 @@ namespace HaniehV1.Areas.Admin.Controllers
             return View();
         }
 
+
+
         [Route("DeletePaint")]
         public IActionResult DeletePaint( int id)
         {
-            return View();
+            DeletePaintVm deletePaint = _admin.GetPaintDelete(id);
+            return View(deletePaint);
         }
+
+        [Route("DeletePaint")]
+        [HttpPost]
+        public IActionResult DeletePaint(DeletePaintVm deletePaint)
+        {
+            _admin.DeletePaint(deletePaint.PainyId);
+            bool result  = _admin.IsDeletePaint(deletePaint.PainyId);
+            if(result != true)
+            {
+                ViewBag.IsDeletePaint = false;
+                return View(deletePaint);
+            }
+            return RedirectToAction("Main");
+
+            // delete ==> redirect 
+            // problem ==> show error 
+        }
+
 
         #endregion
 

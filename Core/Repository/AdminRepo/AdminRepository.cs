@@ -93,5 +93,44 @@ namespace Core.Repository.AdminRepo
             allPaints.Paints = result.OrderBy(u => u.Created).ToList();
             return allPaints;
         }
+
+        public DeletePaintVm GetPaintDelete(int id)
+        {
+            Paint paint = _db.Paints.FirstOrDefault(u => u.PaintId == id);
+            if(paint == null)
+            {
+                return null;
+            }
+
+            DeletePaintVm deletePaint = new DeletePaintVm()
+            {
+                PainyId = paint.PaintId,
+                PaintImageName = paint.ImagePaintName,
+                PaintName = paint.PaintName,
+            };
+
+            return deletePaint;
+        }
+
+        public void DeletePaint(int paintId)
+        {
+            Paint paint = _db.Paints.SingleOrDefault( u => u.PaintId == paintId );
+            if(paint != null)
+            {
+                _db.Paints.Remove(paint);
+                Save();
+            }
+        }
+
+        public bool IsDeletePaint(int paintId)
+        {
+            Paint paint = _db.Paints.SingleOrDefault(u => u.PaintId == paintId);
+            if(paint !=null)
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 }

@@ -14,6 +14,9 @@ namespace Core.Servises.AdminSer
         bool IsAddPaint(int paintId);
         string SaveImage(UploadVm upload);
         AllPaintsVm AllPaints();
+        DeletePaintVm GetPaintDelete(int id);
+        void DeletePaint(int paintId);
+        bool IsDeletePaint(int paintId);
         void Save();
 
     }
