@@ -64,6 +64,7 @@ namespace HaniehV1.Areas.Admin.Controllers
             {
                 return View(paintVm);
             }
+
             return NotFound();
         }
 
@@ -71,9 +72,8 @@ namespace HaniehV1.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult EditPaint(EditPaintVm editPaint)
         {
-            // time to edit page and ...
-            // when we delete, wir sollen delete bild!
-            return View();
+            _admin.EditPaint(editPaint);
+            return RedirectToAction("Main");
         }
 
 

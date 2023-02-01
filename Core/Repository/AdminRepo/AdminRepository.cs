@@ -3,6 +3,7 @@ using Core.Servises.AdminSer;
 using Data.Models;
 using Data.MyDbFile;
 using Data.ViewModels;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,7 +37,6 @@ namespace Core.Repository.AdminRepo
                     PaintId = CreateMyBookId.CreateId(),
                 };
 
-                // 1 image name ??
                 _db.Paints.Add(paint);
                 Save();
             }
@@ -88,7 +88,6 @@ namespace Core.Repository.AdminRepo
             allPaints.Paints = result.OrderBy(u => u.Created).ToList();
             return allPaints;
         }
-
         public DeletePaintVm GetPaintDelete(int id)
         {
             Paint paint = _db.Paints.FirstOrDefault(u => u.PaintId == id);
@@ -106,17 +105,26 @@ namespace Core.Repository.AdminRepo
 
             return deletePaint;
         }
-
         public void DeletePaint(int paintId)
         {
             Paint paint = _db.Paints.SingleOrDefault( u => u.PaintId == paintId );
             if(paint != null)
             {
+                string imageNmae = paint.ImagePaintName;
                 _db.Paints.Remove(paint);
                 Save();
+                DeleteImage(imageNmae);
             }
         }
-
+        public void DeleteImage(string imageName)
+        {
+            string imagePath = "";
+            imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/paintImage", imageName);
+            if (File.Exists(imagePath))
+            {
+                File.Delete(imagePath);
+            }
+        }
         public bool IsDeletePaint(int paintId)
         {
             Paint paint = _db.Paints.SingleOrDefault(u => u.PaintId == paintId);
@@ -137,6 +145,8 @@ namespace Core.Repository.AdminRepo
 
 
 
+
+        #region Edit
         public EditPaintVm GetPaintEdit(int paintId)
         {
             Paint paint = _db.Paints.SingleOrDefault(u => u.PaintId == paintId);
@@ -155,5 +165,58 @@ namespace Core.Repository.AdminRepo
 
             return null;
         }
+
+        public void EditPaint(EditPaintVm editPaint)
+        {
+            Paint paint = _db.Paints.SingleOrDefault( u => u.PaintId == editPaint.PaintId);
+
+
+            paint.PaintName = editPaint.NewPaintName;
+            paint.Description = editPaint.NewDescription;
+            if(editPaint.NewPaintCover != null)
+            {
+                paint.ImagePaintName = SaveImage(editPaint.NewPaintCover, editPaint.oldImageName);
+            }
+
+            Update(paint);
+
+        }
+
+        public string SaveImage(IFormFile paintCover, string oldImageName)
+        {
+            string filePath = "";
+            string paintNameForDelete = oldImageName;
+            oldImageName = NameGenerator.GenerateUniqCode() + Path.GetExtension(paintCover.FileName);
+            filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/paintImage", oldImageName);
+            using( var stream = new FileStream(filePath, FileMode.Create))
+            {
+                paintCover.CopyTo(stream);
+                DeleteImageStr(paintNameForDelete);
+                return oldImageName;
+            }
+            return "NULL";
+        }
+        public void DeleteImageStr(string imageName)
+        {
+            string imagePath = "";
+            imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/paintImage", imageName);
+            if (File.Exists(imagePath))
+            {
+                File.Delete(imagePath);
+            }
+        }
+        public void Update(Paint paint)
+        {
+            _db.Paints.Update(paint);
+            Save();
+        }
+
+
+
+
+
+        #endregion
+
+
     }
 }
