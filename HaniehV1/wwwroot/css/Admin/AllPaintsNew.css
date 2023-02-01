@@ -84,6 +84,7 @@ button:active {
     border-radius: 8px ;
     flex: 5;
     padding: 15px ;
+    margin-bottom: 15px ;
 }
 .main-left {
     flex: 1;

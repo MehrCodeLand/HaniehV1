@@ -137,15 +137,6 @@ namespace Core.Repository.AdminRepo
         }
         #endregion
 
-        
-        public void Save()
-        {
-            _db.SaveChanges();
-        }
-
-
-
-
         #region Edit
         public EditPaintVm GetPaintEdit(int paintId)
         {
@@ -217,6 +208,11 @@ namespace Core.Repository.AdminRepo
 
         #endregion
 
+        
+        public void Save()
+        {
+            _db.SaveChanges();
+        }
 
     }
 }

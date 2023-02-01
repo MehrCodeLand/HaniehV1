@@ -41,8 +41,6 @@ namespace HaniehV1.Areas.Admin.Controllers
 
         #endregion
 
-
-
         #region All paints
 
         [Route("AllPaint")]
