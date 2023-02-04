@@ -1,0 +1,353 @@
+@media only screen and (max-device-width: 500px ){
+    img {
+        height: 20px  ;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        font-family: monospace;
+        margin: 0px ;
+    }
+
+    .home-header {
+        display: flex;
+        flex-direction: column;
+        background-color: #ddd0c8 ;
+
+    }
+    .left-section {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        padding: 0.5rem ;
+    }
+    .header-title {
+        flex: 4 ;
+        padding-left: 0.3rem ;
+        display: flex;
+        align-items: center;
+    }
+    .title {
+        font-size: 1rem ;
+    }
+    .header-logo {
+        flex : 1 ;
+        display: flex ;
+        justify-content: center;
+    }
+    .logo {
+        flex: 1;
+        height: 100%   ;
+        width: 100% ;
+        object-fit: cover;
+        object-position: center;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 0.3rem ;
+    }
+    .header-secend {
+        padding: 0.5rem ;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .home-main {
+        background-color: #323232;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0.8rem ;
+        padding-top: 1.3rem;
+    }
+    .paint-obj {
+        background-color: #ddd0c8;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0.7rem ;
+        border-radius: 0.5rem ;
+
+    }
+    .paint-info {
+        display: flex;
+        flex-direction: column;
+        padding: 0.5rem ;
+    }
+    .paint-title {
+        font-size: 1rem ;
+        padding-top: 0px ;
+        padding-bottom: 0px ;
+        margin-top: 0px ;
+        margin-bottom: 0px ;
+    }
+    .paint-img {
+        border-radius: 0.5rem ;
+    }
+    .paint {
+        height: 100% ;
+        width: 100%  ;
+        object-fit: cover;
+        object-position: center;
+        border-top-left-radius: 0.5rem ;
+        border-top-right-radius: 0.5rem ;
+    }
+    .paint-show {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding-bottom: 0.5rem ;
+        padding-top: 0.5rem ;
+        border-bottom-right-radius: 0.5rem ;
+        border-bottom-left-radius: 0.5rem  ;
+    }
+
+    .show-btn {
+        padding: 4px 20px ;
+        border: none ;
+        border-radius: 0.2rem ;
+        font-family: monospace ;
+        color: #ddd0c8;
+        background-color: #323232;
+    }
+
+    .home-endbar {
+        background-color: #ddd0c8;
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-device-width: 500px ){
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0px ;
+}
+
+.home-header {
+    background-color: #ddd0c8 ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 20px ;
+
+}
+.header-secend {
+    flex: 1;
+}
+.left-section {
+    flex: 1;
+
+    display: flex;
+    flex-direction: row;
+    height: unset;
+
+    background-color: #ddd0c8;
+    
+}
+.header-title {
+    
+    flex: 2;
+    justify-content: center;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1.5rem ;
+    margin-left: 0.5rem ;
+}
+.title {
+    font-size: 1.5rem ;
+    padding-bottom: 0px ;
+    margin-bottom:0px ; 
+    padding-top: 0px ;
+    margin-top: 0px ;
+    font-family: monospace;
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    padding-left: 0.5rem ;
+    color: #323232;
+}
+.header-logo {
+    flex: 1;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}    
+.logo {
+    flex: 1;
+    max-height: 4rem ;
+    max-width: 10rem ;
+    object-fit: cover;
+    object-position: center;
+    border: solid 0.2rem #323232;
+    border-radius: 0.5rem ;
+}
+.header-btns-new {
+    flex: 1;
+}    
+
+.header-secend {
+    flex: 1 ;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.some-text {
+    padding-top: 3rem  ;
+    padding-bottom: 3rem ;
+    font-family: monospace;
+    font-size: 1.4rem;
+}
+
+
+.home-main {
+    background-color: #ddd0c8 ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem ;
+}
+.paint-obj {
+    background-color: #323232;
+    padding: 1.3rem ;
+    display: flex;
+    flex-direction: row;
+    border-radius: 0.6rem ;
+    margin-bottom:10rem ;
+}
+.paint-img {
+    flex: 5 ;
+    max-width: 50rem ;
+}
+.paint {
+    width: 100% ;
+    height: 100% ;
+    object-fit: cover;
+    object-position: center;
+
+}
+.paint-info {
+    padding-right: 0.5rem ;
+
+    background-color: #ddd0c8 ;
+    height: unset;
+    flex: 3 ;
+    padding-left: 0.7rem;
+    font-family: monospace;
+    align-items: left;
+    justify-content: center;
+
+    display: flex;
+    flex-direction: column;
+}
+.paint-title {
+    margin:0px ;
+    padding-top: 0.2rem ;
+    font-size: 1.5rem ;
+}
+.paint-description {
+    margin: 0px ;
+    padding-top: 0.5rem ;
+    font-size: 1rem;
+}
+.paint-show {
+    flex : unset ;
+    display: flex;
+    flex-direction: row;
+}
+.form-input {
+    flex: 1 ;
+    background-color: #ddd0c8;
+    display: flex;
+    border-top-right-radius: 0.7rem  ;
+    border-bottom-right-radius: 0.7rem ;
+}
+.show-btn{
+    font-family: monospace;
+    font-size: 1rem ;
+    font-weight: bold;
+    border: none ;
+    background-color: #ddd0c8;
+    border-top-right-radius: 0.7rem  ;
+    border-bottom-right-radius: 0.7rem ;
+    padding: 10px  ;
+    text-align: center;
+    text-decoration: none;
+
+    transition: background-color 0.15s ;
+    border-left: solid 0.1rem #323232;
+}
+.show-btn:hover {
+    background-color: #beada3;
+}
+.show-btn:active {
+    background-color: #ddd0c8 ;
+}
+
+
+
+
+
+.home-endbar {
+    background-color: #323232 ;
+    padding: 10px ;
+
+    display: flex;
+    flex-direction: row;
+    font-family: monospace;
+}
+.mehrshad-info {
+    flex: 1 ;
+    text-align: center;
+    color: #ddd0c8;
+    font-size: 1.1rem;
+}
+.mehrshad {
+    font-size: 1.3rem ;
+    font-weight: bold;
+    font-family: monospace;
+    padding: 0.3rem ;
+}
+a {
+    text-decoration: none;
+}
+
+}

@@ -1,0 +1,63 @@
+﻿@using Data.ViewModels
+@model AllPaintForMainVm
+
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/Home/newHome.css">
+    <title>New Home</title>
+</head>
+<body>
+
+
+    <div class="home-header">
+        <div class="left-section">
+            <div class="header-logo">
+                <img class="logo" src="/img/MU9.png">
+            </div>
+            <div class="header-title">
+                <p class="title">Hanieh|Woman Life Freedom</p>
+            </div>
+        </div>
+        <div class="header-secend">
+            <p class="some-text">lorem ipsum dolor sit amet, consectetur adip</p>
+        </div>
+    </div>
+
+
+    <div class="home-main">
+
+        @foreach( var paint in Model.Paints)
+        {
+            <div class="paint-obj">
+                <div class="paint-img">
+                    <img class="paint" src="/paintImage/@paint.ImagePaintName">
+                </div>
+                <div class="paint-info">
+                    <p class="paint-title">@paint.PaintName</p>
+                    <p class="paint-description">@paint.Description</p>
+                </div>
+                <div class="paint-show">
+                    <form action="#" class="form-input">
+                        <button type="submit" class="show-btn">Show</button>
+                    </form>
+                </div>
+            </div>
+        }
+    <div class="home-endbar">
+        <div class="mehrshad-info">
+            <div class="mehrshad-text">
+                <p>this webseit is created by <span class="mehrshad">Mehrhsad</span></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
