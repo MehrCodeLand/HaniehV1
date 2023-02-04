@@ -1,0 +1,58 @@
+﻿@using Data.ViewModels
+@model ShowPaintVm
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/Home/showPaint.css">
+    <title>@Model.PaintName | Hanieh</title>
+</head>
+<body>
+    <div class="home-header">
+        <div class="left-section">
+            <div class="header-logo">
+                <img class="logo" src="/img/MU9.png">
+            </div>
+            <div class="header-title">
+                <p class="title">Hanieh|Woman Life Freedom</p>
+            </div>
+        </div>
+        <div class="header-secend">
+            <p class="some-text">lorem ipsum dolor sit amet, consectetur adip</p>
+        </div>
+    </div>
+
+    <div class="home-main">
+        <div class="paint-obj">
+            <div class="paint-img">
+                <img class="paint" src="/paintImage/@Model.ImageName">
+            </div>
+            <div class="paint-info">
+                <p class="paint-title">@Model.PaintName</p>
+                <p class="paint-description">@Model.Description</p>
+                <p class="paint-date">@Model.CreateTime.ToString()</p>
+            </div>
+        </div>
+        <div class="all-btns">
+            <form asp-area="Main" asp-controller="MainHome" asp-action="Main">
+                <button type="submit" class="back-btn">Back To Main</button>
+            </form>
+        </div>
+        <div class="home-endbar">
+            <div class="mehrshad-info">
+                <div class="mehrshad-text">
+                    <p>this webseit is created by <span class="mehrshad">Mehrhsad</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

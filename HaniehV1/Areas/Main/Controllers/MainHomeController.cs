@@ -25,7 +25,13 @@ namespace HaniehV1.Areas.Main.Controllers
         [Route("ShowPaint")]
         public IActionResult ShowPaint( int id)
         {
-            return View();
+            ShowPaintVm showPaint = _main.GetPaintShow(id);
+            if(showPaint != null)
+            {
+                return View(showPaint);
+            }
+
+            return RedirectToAction("Main");
         }
     }
 }

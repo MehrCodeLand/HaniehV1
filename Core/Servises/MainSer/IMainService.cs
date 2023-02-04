@@ -10,5 +10,6 @@ namespace Core.Servises.MainSer
     public interface IMainService
     {
         AllPaintForMainVm GetAllPaint();
+        ShowPaintVm GetPaintShow(int myPaintId);
     }
 }

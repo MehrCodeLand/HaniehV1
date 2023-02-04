@@ -17,13 +17,30 @@ namespace Core.Repository.MainRepo
         {
             _db = db;
         }
-
         public AllPaintForMainVm GetAllPaint()
         {
             IQueryable<Paint> result = _db.Paints;
             AllPaintForMainVm allPaint = new AllPaintForMainVm();
             allPaint.Paints = _db.Paints.OrderBy(u => u.Created).ToList();
             return allPaint;
+        }
+        public ShowPaintVm GetPaintShow(int myPaintId)
+        {
+            Paint paint = _db.Paints.SingleOrDefault(u => u.PaintId == myPaintId);
+            if( paint != null)
+            {
+                ShowPaintVm paintVm = new ShowPaintVm()
+                {
+                    PaintName = paint.PaintName,
+                    ImageName = paint.ImagePaintName,
+                    Description = paint.Description,
+                    CreateTime = paint.Created,
+                };
+
+                return paintVm;
+            }
+
+            return null;
         }
     }
 }
