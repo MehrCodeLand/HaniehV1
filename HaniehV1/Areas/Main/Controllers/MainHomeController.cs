@@ -19,5 +19,13 @@ namespace HaniehV1.Areas.Main.Controllers
             AllPaintForMainVm allPaint = _main.GetAllPaint();  
             return View(allPaint);
         }
+
+
+
+        [Route("ShowPaint")]
+        public IActionResult ShowPaint( int id)
+        {
+            return View();
+        }
     }
 }

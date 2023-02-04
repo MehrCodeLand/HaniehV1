@@ -46,8 +46,8 @@
                     <p class="paint-description">@paint.Description</p>
                 </div>
                 <div class="paint-show">
-                    <form action="#" class="form-input">
-                        <button type="submit" class="show-btn">Show</button>
+                    <form asp-area="Main" asp-controller="MainHome" asp-action="ShowPaint" asp-route-id="@paint.PaintId" class="form-input">
+                        <button  type="submit" class="show-btn">Show</button>
                     </form>
                 </div>
             </div>
