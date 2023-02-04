@@ -14,7 +14,6 @@ namespace HaniehV1.Areas.Main.Controllers
         }
 
 
-        [Route("Main_Home")]
         public IActionResult Main()
         {
             AllPaintForMainVm allPaint = _main.GetAllPaint();  
