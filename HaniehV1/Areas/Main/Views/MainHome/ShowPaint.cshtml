@@ -12,6 +12,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/Home/showPaint.css">
     <title>@Model.PaintName | Hanieh</title>
 </head>
@@ -40,6 +41,16 @@
                 <p class="paint-description">@Model.Description</p>
                 <p class="paint-date">@Model.CreateTime.ToString()</p>
             </div>
+        </div>
+        <div class="social-media">
+            <a href="#">
+                <i class="fa fa-instagram" style="font-size:2rem;
+                margin-right: 2rem"></i>
+                <i class="fa fa-telegram" style="font-size:2rem;
+                margin-right: 2rem "></i>
+                <i class="fa fa-twitter" style="font-size: 2rem;
+                margin-right: 0px "></i>
+            </a>
         </div>
         <div class="all-btns">
             <form asp-area="Main" asp-controller="MainHome" asp-action="Main">

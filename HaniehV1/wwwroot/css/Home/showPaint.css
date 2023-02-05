@@ -283,4 +283,27 @@
         color: #ddd0c8;
         background-color: #323232
     }
+
+
+    a {
+        text-decoration: none;
+    }
+
+        a:link {
+            color: #ddd0c8;
+        }
+
+        a:visited {
+            color: #ddd0c8;
+        }
+
+    .social-media {
+        margin-top: 0.7rem;
+        background-color: #323232;
+        padding: 1.1rem;
+        border-radius: 0.2rem;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
 }
