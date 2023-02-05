@@ -31,7 +31,7 @@ namespace HaniehV1.Areas.Main.Controllers
                 return View(showPaint);
             }
 
-            return RedirectToAction("Main");
+            return RedirectToAction("Main"); 
         }
     }
 }
