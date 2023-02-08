@@ -6,7 +6,89 @@
     Layout = null;
 }
 
+
+
+
+
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/Admin/newAllPaintV2.css" rel="stylesheet">
+    <title>All Paint V2</title>
+</head>
+<body>
+    <div class="header">
+        <div class="logo-staf">
+            <div class="logo-content">
+                <img class="logo" src="/img/pTUg_p7B_400x400.jpg">
+            </div>
+            <div class="hanieh-title">
+                HANIEH|Freedome
+            </div>
+            <div class="space-right"></div>
+        </div>
+    </div>
+
+
+    <div class="main-home">
+        <div class="all-paint-obj">
+
+            @foreach( var paint in Model.Paints )
+            {
+                <div class="paint-obj">
+                    <div class="paint-img-div">
+                        <img class="paint-img" src="/paintImage/@paint.ImagePaintName">
+                    </div>
+                    <div class="paint-info">
+                        <p class="paint-title">@paint.PaintName</p>
+                        <p class="paint-date">@paint.Created.ToString()</p>
+                    </div>
+                    <div class="paint-extra">
+                            <a asp-area="Admin" asp-controller="AdminHome" asp-action="EditPaint" asp-route-id="@paint.PaintId">
+                                <button class="edit-btn">Edit</button>
+                            </a>
+                            <a asp-area="Admin" asp-controller="AdminHome" asp-action="DeletePaint" asp-route-id="@paint.PaintId" class="paint-delete">
+                                <button type="submit" class="btn-delete">Delete</button>
+                            </a>
+                    </div>
+                </div>
+            }
+
+
+        </div>
+        <div class="paint-back-main">
+            <form asp-area="Admin" asp-controller="AdminHome" asp-action="Main" class="paint-back-form">
+                <button type="submit" class="paint-back-btn">Back To Main</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -68,4 +150,6 @@
     </div>
     <br />
 </body>
-</html>
+</html>*@
+
+

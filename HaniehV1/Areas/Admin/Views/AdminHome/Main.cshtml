@@ -3,46 +3,51 @@
     Layout = null;
 }
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/Admin/main.css">
-    <title>Admin</title>
+    <link href="/css/Admin/newAdminMain.css" rel="stylesheet">
+    <title>Document</title>
 </head>
 <body>
     <div class="header">
-        <div class="left-sec">
-            <a class="a-burger" href="#">
-                <img src="/icon/hamburger-menu.svg" class="burger-logo">
-            </a>
-            <img src="/icon/youtube-logo.svg" class="hanieh-logo">
+        <div class="logo-staf">
+            <div class="logo-content">
+                <img class="logo" src="/img/MU9.png">
+            </div>
+            <div class="hanieh-title">
+                HANIEH|Freedome
+            </div>
+            <div class="space-right"></div>
         </div>
-        <div class="middle-sec">
-            <div class="title-web">HANIEH</div>
-        </div>
-        <div class="right-sec"></div>
     </div>
-    <div class="main-container">
-        <div class="btns-div">
-            <a asp-area="Admin" asp-controller="AdminHome" asp-action="Upload">
-                <button class="upload-Paint-btn">
-                    Upload Paint
-                </button>
-            </a>
-            <a asp-area="Admin" asp-controller="AdminHome" asp-action="AllPaint">
-                <button class="all-Paints-btn">
-                    See All Paints
-                </button>
-            </a>
-            <a asp-area="Main" asp-controller="MainHome" asp-action="Main">
-                <button class="main-web-page-btn">
-                    Go to web seit
-                </button>
-            </a>
+
+
+    <div class="main">
+        <div class="all-btn">
+            <form method="get" asp-area="Admin" asp-controller="AdminHome" asp-action="Upload" class="uplaod-paint-form">
+                <button type="submit" class="upload-btn">Upload Paint</button>
+            </form>
+            <form asp-area="Admin" asp-controller="AdminHome" asp-action="AllPaint" class="see-paint-form">
+                <button type="submit" class="upload-btn">See All Paints</button>
+            </form>
+            <form asp-area="Main" asp-controller="MainHome" asp-action="Main" class="mainweb-paint-form">
+                <button type="submit" class="upload-btn">Main Hanieh Web</button>
+            </form>
         </div>
     </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
