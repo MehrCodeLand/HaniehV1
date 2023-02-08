@@ -25,6 +25,7 @@ namespace Core.Servises.AdminSer
         string SaveImage(IFormFile paintCover , string oldImageName);
         void DeleteImageStr(string imageName);
         void Update(Paint paint);
+        bool CheckType(string fileName);
         void Save();
 
     }
