@@ -5,48 +5,57 @@
     Layout = null;
 }
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/css/Admin/editPage.css" rel="stylesheet">
-    <title>Edit Page</title>
+    <link rel="stylesheet" href="/css/Admin/newAdminEdit.css">
+    <title>Edit</title>
 </head>
 <body>
     <div class="header">
-        <div class="left-sec">
-            <a class="a-burger" href="#">
-                <img src="/icon/hamburger-menu.svg" class="burger-logo">
-            </a>
-            <img src="/icon/youtube-logo.svg" class="hanieh-logo">
+        <div class="logo-staf">
+            <div class="logo-content">
+                <img class="logo" src="/img/MU9.png">
+            </div>
+            <div class="hanieh-title">
+                HANIEH|Freedome
+            </div>
+            <div class="space-right"></div>
         </div>
-        <div class="middle-sec">
-            <div class="title-web">HANIEH</div>
-        </div>
-        <div class="right-sec"></div>
     </div>
 
-    <div class="main-div">
-        <div class="left-div"></div>
-        <div class="form-div">
-            <form class="form-c" runat="server" method="post" enctype="multipart/form-data">
+    <div class="main">
+        <div class="form-data">
+            <form class="form-edit" method="post" runat="server" enctype="multipart/form-data">
                 <input asp-for="oldImageName" hidden value="@Model.oldImageName" />
-                <img src="/paintImage/@Model.oldImageName" class="paint-image">
                 <input hidden asp-for="PaintId" value="@Model.PaintId" class="paintId">
-                <input asp-for="NewPaintCover" type="file" class="paint-input">
-                <input asp-for="NewPaintName" type="text" value="@Model.NewPaintName" class="title">
-                <textarea asp-for="NewDescription" class="descrption" cols="34" rows="10">@Model.NewDescription</textarea>
-                <div class="btn-div">
+
+                <div class="info-title">
+                    <input asp-for="NewPaintName" type="text" class="title" value="@Model.NewPaintName">
+                </div>
+                <div class="info-des">
+                    <textarea asp-for="NewDescription" class="description" cols="30" rows="10" >@Model.NewDescription</textarea>
+                </div>
+                <div class="info-paint-img">
+                    <img class="paint-image" src="/paintImage/@Model.oldImageName">
+                </div>
+                <div class="info-img-input">
+                    <input asp-for="NewPaintCover" type="file" class="image-input">
+                </div>
+                <div class="edit-btn">
                     <button type="submit" class="edit">Edit</button>
-                    <a asp-area="Admin"  asp-controller="AdminHome" asp-action="Main">
-                        <button type="button" >Back</button>
-                    </a>
                 </div>
             </form>
+            <div class="extra-btn">
+                <a asp-area="Admin" asp-controller="AdminHome" asp-action="Main">
+                    <button class="back-btn">Back</button>
+                </a>
+            </div>
         </div>
-        <div class="right-div"></div>
     </div>
 </body>
 </html>
