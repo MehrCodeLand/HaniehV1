@@ -5,58 +5,63 @@
     Layout = null;
 }
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/Admin/upload.css">
-    <title>Uplaod Page</title>
+    <link rel="stylesheet" href="/css/Admin/newAdminUpload.css">
+    <title>Upload Paint</title>
 </head>
 <body>
-    @if (ViewBag.IsCorrect == false ){
+    @if (ViewBag.IsCorrect == false)
+    {
         <div class="html-alert">
             <div class="alert-h">Some data is not correct!</div>
         </div>
     }
-    @if( ViewBag.IsAdd == true ){
+    @if (ViewBag.IsAdd == true)
+    {
         <div class="html-alert-create">
             <div class="alert-h">Paint Was Created!</div>
         </div>
     }
     <div class="header">
-        <div class="left-sec">
-            <a class="a-burger" href="#">
-                <img src="/icon/hamburger-menu.svg" class="burger-logo">
-            </a>
-            <img src="/icon/youtube-logo.svg" class="hanieh-logo">
+        <div class="logo-staf">
+            <div class="logo-content">
+                <img class="logo" src="/img/MU9.png">
+            </div>
+            <div class="hanieh-title">
+                HANIEH|Freedome
+            </div>
+            <div class="space-right"></div>
         </div>
-        <div class="middle-sec">
-            <div class="title-web">HANIEH</div>
-        </div>
-        <div class="right-sec"></div>
     </div>
 
-    <div class="main-div">
-        <form class="upload-form" runat="server" method="post" enctype="multipart/form-data">
-            <div class="title-group">
-                <label class="paint-title-label" for="title">Paint's Title</label>
-                <input asp-for="PaintName" class="paint-title" id="title" type="text">
-            </div>
-
-            <div class="des-group">
-                <label for="description">Description</label>
-                <textarea asp-for="Description" class="textarea-1" name="description" id="description" cols="30" rows="10"></textarea>
-            </div>
-            <div class="upload-group">
-                <input asp-for="UploadImage" class="paint-upload" type="file">
-                <button class="paint-upload-btn" type="submit">Upload</button>
+    <div class="main">
+        <div class="form-upload-data">
+            <form runat="server" method="post" enctype="multipart/form-data" class="form-upload">
+                <div class="upload-info">
+                    <input asp-for="PaintName" type="text" class="title" placeholder="Title...">
+                </div>
+                <div class="upload-textarea">
+                    <textarea asp-for="Description" placeholder="Description..." class="description" cols="30" rows="10"></textarea>
+                </div>
+                <div class="upload-paint">
+                    <input asp-for="UploadImage" type="file" class="image-input">
+                </div>
+                <div class="btns">
+                    <button type="submit" class="upload-btn">Upload</button>
+                </div>
+            </form>
+            <div class="extra-btns">
                 <a asp-area="Admin" asp-controller="AdminHome" asp-action="Main">
-                    <button type="button" class="cancel-btn">Back</button>
+                    <button class="cancel-btn">Cancel</button>
                 </a>
             </div>
-        </form>
+        </div>
     </div>
 </body>
 </html>
