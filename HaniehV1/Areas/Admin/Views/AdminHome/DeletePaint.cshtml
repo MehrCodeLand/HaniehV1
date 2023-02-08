@@ -4,41 +4,57 @@
     Layout = null;
 }
 
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/css/Admin/deletePanel.css" rel="stylesheet">
-    <title>Delete Page</title>
+    <link rel="stylesheet" href="/css/Admin/newAdminDelete.css">
+    <title>Delete</title>
 </head>
 <body>
     <div class="header">
-        <div class="left-sec">
-            <a class="a-burger" href="#">
-                <img src="/icon/hamburger-menu.svg" class="burger-logo">
-            </a>
-            <img src="/icon/youtube-logo.svg" class="hanieh-logo">
+        <div class="logo-staf">
+            <div class="logo-content">
+                <img class="logo" src="/img/MU9.png">
+            </div>
+            <div class="hanieh-title">
+                HANIEH|Freedome
+            </div>
+            <div class="space-right"></div>
         </div>
-        <div class="middle-sec">
-            <div class="title-web">HANIEH</div>
-        </div>
-        <div class="right-sec"></div>
     </div>
 
-    <div class="main-div">
-        <div class="left-d"></div>
-        <form class="form-c" method="post">
-            <img class="img-del" src="/paintImage/@Model.PaintImageName">
-            <input asp-for="PainyId" value="@Model.PainyId" hidden>
-            <input type="text" value="@Model.PaintName" readonly>
-            <button type="submit">Delete</button>
-            <a href="#">
-                <button class="cancel-btn">Cancel</button>
-            </a>
-        </form>
-        <div class="right-d"></div>
+
+    <div class="main">
+        <div class="form-data">
+            <form method="post" class="form-delete">
+                <div class="paint-image">
+                    <img class="paint" src="/paintImage/@Model.PaintImageName">
+                </div>
+                <div class="info-paint">
+                    <p class="title">@Model.PaintName</p>
+                </div>
+                <div class="delete-btn">
+                    <button class="delete" type="submit">Delete</button>
+                </div>
+                <input asp-for="PainyId" value="@Model.PainyId" hidden>
+            </form>
+            <div class="extra-btn">
+                <a>
+                    <button class="back-btn">Back</button>
+                </a>
+            </div>
+        </div>
     </div>
 </body>
 </html>
+
+
+
