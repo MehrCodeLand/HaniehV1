@@ -41,17 +41,34 @@ namespace Core.Repository.AdminRepo
                 Save();
             }
         }
+        public bool CheckType(string fileName)
+        {
+
+            // validation for type of the file
+            // if(is in our type we return true 
+            // else we return fasle difaltlt 
+
+            string[] fileExtensions =
+                { ".bmp", ".jpg", ".png", ".gif", ".jpeg", ".BMP", ".JPG", ".PNG", ".GIF", ".JPEG" };
+
+            foreach (var type in fileExtensions)
+            {
+                if (fileName == type) { return true; }
+            }
+
+            return false;
+        }
         public bool CheckPaint(UploadVm upload)
         {
             if (upload == null) { return false; }
-            else if(upload.PaintName == null ) { return false; }
+            else if((upload.PaintName == null) || (upload.PaintName.Length > 20) ) { return false; }
             else if(upload.Description.Length < 10) { return false; }
             else if(upload.UploadImage == null ) { return false; }
-
-            // new validation
+            
+            // new validation IMG
             bool result = CheckType(Path.GetExtension(upload.UploadImage.FileName));
             if(result == false) { return false; }
-
+            if(upload.UploadImage.Length > 20000000) { return false; }
 
 
             return true;
@@ -218,22 +235,5 @@ namespace Core.Repository.AdminRepo
             _db.SaveChanges();
         }
 
-        public bool CheckType(string fileName)
-        {
-
-            // validation for type of the file
-            // if(is in our type we return true 
-            // else we return fasle difaltlt 
-
-            string[] fileExtensions =
-                { ".bmp", ".jpg", ".png", ".gif", ".jpeg", ".BMP", ".JPG", ".PNG", ".GIF", ".JPEG" };
-
-            foreach( var type in fileExtensions)
-            {
-                if(fileName == type) { return true; }
-            }
-
-            return false;
-        }
     }
 }
