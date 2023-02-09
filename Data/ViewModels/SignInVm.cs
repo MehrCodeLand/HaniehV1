@@ -5,16 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data.Models
+namespace Data.ViewModels
 {
-    public class Admin
+    public class SignInVm
     {
-        [Key]
-        public int AdminId { get; set; }
-
-        public int MyAdminId { get; set; }
-        [Required]
         public string Username { get; set; }
+
+        [DataType(DataType.Password)]
         public string Password { get; set; }
     }
 }

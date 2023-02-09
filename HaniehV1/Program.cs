@@ -3,6 +3,7 @@ using Core.Repository.MainRepo;
 using Core.Servises.AdminSer;
 using Core.Servises.MainSer;
 using Data.MyDbFile;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +15,23 @@ builder.Services.AddDbContext<MyDb>(options => options.UseSqlServer(
     ));
 builder.Services.AddScoped<IAdminService, AdminRepository>();
 builder.Services.AddScoped<IMainService, MainRepository>();
+
+#region Security
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+}).AddCookie(options =>
+{
+    options.LoginPath = "/SignIn";
+    options.LogoutPath = "/SignOut";
+    options.ExpireTimeSpan = TimeSpan.FromDays(29);
+});
+
+#endregion
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

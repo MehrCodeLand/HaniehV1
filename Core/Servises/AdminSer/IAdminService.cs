@@ -11,6 +11,8 @@ namespace Core.Servises.AdminSer
 {
     public interface IAdminService
     {
+        void CreateAdmin(CreateAdminVm createAdmin);
+        bool CheckCreateAdmin(CreateAdminVm createAdmin);
         bool CheckPaint(UploadVm upload);
         void AddPaint(UploadVm upload);
         bool IsAddPaint(int paintId);

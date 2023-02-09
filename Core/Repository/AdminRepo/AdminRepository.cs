@@ -1,4 +1,5 @@
 ﻿using Core.Creator;
+using Core.Security;
 using Core.Servises.AdminSer;
 using Data.Models;
 using Data.MyDbFile;
@@ -229,7 +230,32 @@ namespace Core.Repository.AdminRepo
 
         #endregion
 
-        
+        #region Create_Admin
+
+        public bool CheckCreateAdmin(CreateAdminVm createAdmin)
+        {
+            if(createAdmin == null) { return false; }
+            else if ( (createAdmin.RePassword != createAdmin.Password) ){ return false;  }
+            else if( (createAdmin.Password.Length < 5 ) || (createAdmin.Password.Length > 15) ){ return false; }
+            else if( (createAdmin.Username.Length < 3) || (createAdmin.Username.Length > 20 ) ){ return false; }
+
+            return true;
+        }
+        public void CreateAdmin(CreateAdminVm createAdmin)
+        {
+            Admin admin = new Admin()
+            {
+                MyAdminId = CreateMyBookId.CreateId(),
+                Username = createAdmin.Username,
+                Password = HashPasswordC.EncodePasswordMd5(createAdmin.Password),
+            };
+            _db.Admins.Add(admin);
+            Save();
+        }
+
+        #endregion
+
+
         public void Save()
         {
             _db.SaveChanges();

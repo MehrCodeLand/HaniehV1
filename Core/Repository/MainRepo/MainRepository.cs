@@ -1,10 +1,15 @@
-﻿using Core.Servises.MainSer;
+﻿using Core.Security;
+using Core.Servises.MainSer;
 using Data.Models;
 using Data.MyDbFile;
 using Data.ViewModels;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,6 +21,14 @@ namespace Core.Repository.MainRepo
         public MainRepository(MyDb db)
         {
             _db = db;
+        }
+
+
+
+        public Admin GetAdminByUsername(string username)
+        {
+            Admin admin = _db.Admins.SingleOrDefault(u => u.Username == username);
+            return admin;
         }
         public AllPaintForMainVm GetAllPaint()
         {
@@ -41,6 +54,13 @@ namespace Core.Repository.MainRepo
             }
 
             return null;
+        }
+        public bool IsUsernameValid(SignInVm signIn)
+        {
+            string hashPassword = HashPasswordC.EncodePasswordMd5(signIn.Password);
+            Admin admin = _db.Admins.SingleOrDefault(u => (u.Username == signIn.Username) && (u.Password == hashPassword));
+            if (admin != null) { return true;}
+            return false;
         }
     }
 }

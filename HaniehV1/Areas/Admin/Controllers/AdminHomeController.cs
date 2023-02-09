@@ -1,10 +1,12 @@
 ﻿using Core.Servises.AdminSer;
 using Data.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HaniehV1.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class AdminHomeController : Controller
     {
         private readonly IAdminService _admin;
@@ -107,6 +109,27 @@ namespace HaniehV1.Areas.Admin.Controllers
         }
 
 
+        #endregion
+
+        #region Create_Admin
+
+        [Route("CreateAdmin")]
+        public IActionResult CreateAdmin() => View();
+
+        [Route("CreateAdmin")]
+        [HttpPost]
+        public IActionResult CreateAdmin(CreateAdminVm createAdmin )
+        {
+            if (!_admin.CheckCreateAdmin(createAdmin))
+            {
+                ViewBag.IsAdminValid = false;
+                return View();
+            }
+
+            _admin.CreateAdmin(createAdmin);
+            ViewBag.IsAdminValid = true;
+            return View();
+        }
         #endregion
 
     }
