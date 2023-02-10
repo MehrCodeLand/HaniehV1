@@ -1,0 +1,220 @@
+@media only screen and (max-device-width: 500px )
+{
+    body {
+        margin : 0px ;
+        display: flex ;
+        flex-direction: column ;
+    }
+    .header {
+        display: flex ;
+        flex-direction: row;
+        background-color: #E7473C;
+    }
+    .logo-staf {
+        flex: 1;
+        display: flex ;
+        flex-direction: row;
+    }
+    .hanieh-title {
+        flex: 2 ;
+        display: flex ;
+        justify-content: center ;
+        align-items: center ;
+        font-family: monospace;
+        font-size: 1rem ; 
+    }
+    .space-right {
+        flex: 1 ;
+    }
+    .logo-content {
+        flex: 1 ;
+        padding: 1rem ;
+    }
+    .logo {
+        border-radius: 0.3rem ;
+        height: 4rem ;
+        width: 4rem ;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .main {
+        display: flex ;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+    }
+    .form-signout {
+        display: flex;
+        flex-direction: column;
+        background-color: #E7473C;
+        margin-top: 4rem ;
+        border-radius: 0.2rem ;
+        padding: 1.5rem ;
+        row-gap: 1rem;
+    }
+    .my-form {
+        display: flex;
+        flex-direction: column;
+        font-family: monospace;
+        row-gap: 0.5rem ;
+    }
+    .alert-text {
+        margin: 0px ;
+        margin-top: 0.3rem ;
+        font-weight: bold;
+    }
+    .info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .username {
+        background-color: aliceblue;
+        padding: 0.7rem ;
+        border-radius: 0.15rem ;
+        font-weight: bold ;
+        margin: 0px ;
+        margin-top: 0.2rem ;
+    }
+    .all-btns {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0.5rem ;
+     
+    }
+    .SignOut {
+        color: #E7473C;
+        background-color: #323232;
+        border: none;
+        border-radius: 0.15rem ;
+        padding: 0.4rem 0.6rem ;
+    }
+    .extra-btns {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1.5rem ;
+    }
+    .back-btn {
+        color: #E7473C;
+        background-color: #323232;
+        border: none;
+        border-radius: 0.15rem ;
+        padding: 0.4rem 0.6rem ;
+    }
+}
+
+@media only screen and (min-device-width: 500px )
+{
+    body {
+        margin: 0px ;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header {
+        display: flex ; 
+        flex-direction: row;
+        background-color: #E7473C ;
+    }
+    .logo-staf {
+        flex: 2;
+        display: flex ;
+        flex-direction: row;
+        padding: 1rem ;
+    }
+    .hanieh-title {
+        display: flex ;
+        justify-content: center;
+        align-items: center;
+        flex : 3 ;
+        font-size: 2rem ;
+        font-family: monospace;
+    }
+    .logo-content {
+        flex: 1;
+    }
+    .logo {
+        height: 10rem ;
+        width: 10rem ;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 0.5rem ;
+    }
+    .content-creator {
+        flex: 1;
+    }
+    .space-right {
+        flex: 1;
+    }
+
+    .main {
+        display: flex ;
+        flex-direction: column ;
+        justify-content: center; 
+        align-items: center;
+    }
+    .form-signout {
+        display: flex;
+        flex-direction: column;
+        background-color: #E7473C;
+        margin-top: 5rem ;
+        padding: 1.5rem ;
+        border-radius: 0.2rem ;
+        row-gap: 3rem ;
+    }
+    .my-form {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.5rem ;
+        font-family: monospace;
+    }
+    .username {
+        font-size: 1.2rem;
+        color: #323232;
+        padding: 0.5rem ;
+        border-radius: 0.1rem ;
+        background-color: aliceblue;
+        margin-top: 0.2rem  ;
+    }
+    .all-btns {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .SignOut {
+        margin-top: 1rem ;
+        margin-bottom: 1rem;
+        padding: 0.5rem 0.9rem ;
+        border-radius: 0.2rem;
+        border: none;
+        background-color: #323232;
+        color: #E7473C;
+        font-weight: bold;
+    }
+    .extra-btns {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .back-btn {
+        margin-top: 1rem ;
+        margin-bottom: 0.2rem;
+        padding: 0.5rem 0.9rem ;
+        border-radius: 0.2rem;
+        border: none;
+        background-color: #323232;
+        color: #E7473C;
+        font-weight: bold;
+    }
+    .alert-text {
+        margin: 0px ;
+        font-weight: bold;
+    }
+}

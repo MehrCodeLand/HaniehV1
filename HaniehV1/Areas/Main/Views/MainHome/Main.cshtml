@@ -35,8 +35,9 @@
             "
                 class="header-admin">
                 <div class="header-admin-btn">
-                    <a asp-area="Main" asp-controller="MainHome" asp-action="SignIn">
-                        <button style="
+                    @if(User.Identity.Name != null ){
+                        <a asp-area="Main" asp-controller="MainHome" asp-action="SignOutAdmin">
+                            <button style="
                         padding: 0.3rem 1rem;
                         border: none;
                         border-radius: 0.17rem;
@@ -45,10 +46,26 @@
                         font-family: monospace;
                         font-weight: bold;
 "
-                            class="admin-btn">
-                            Login
-                        </button>
-                    </a>
+                                class="admin-btn">
+                                SignOut
+                            </button>
+                        </a>
+                    }else{
+                        <a asp-area="Main" asp-controller="MainHome" asp-action="SignIn">
+                            <button style="
+                            padding: 0.3rem 1rem;
+                            border: none;
+                            border-radius: 0.17rem;
+                            background-color: #323232;
+                            color: #beada3;
+                            font-family: monospace;
+                            font-weight: bold;
+    "
+                                class="admin-btn">
+                                Login
+                            </button>
+                        </a>
+                    }
                 </div>
             </div>
         </div>

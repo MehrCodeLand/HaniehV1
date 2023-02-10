@@ -1,0 +1,54 @@
+﻿@using Data.ViewModels
+@model SignOutVm
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/Home/SignOut.css">
+    <title>SignOut</title>
+</head>
+<body>
+    <div class="header">
+        <div class="logo-staf">
+            <div class="logo-content">
+                <img class="logo" src="/img/MU9.png">
+            </div>
+            <div class="hanieh-title">
+                HANIEH|Freedome
+            </div>
+            <div class="space-right"></div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="form-signout">
+            <form method="post" class="my-form">
+                <div class="are-you">
+                    <p class="alert-text">Are You Sure?</p>
+                </div>
+                <div class="info">
+                    <input hidden asp-for="Username" value="@User.Identity.Name" readonly />
+                    <p class="username">@User.Identity.Name</p>
+                </div>
+                <div class="all-btns">
+                    <button class="SignOut">
+                        SignOut
+                    </button>
+                </div>
+            </form>
+            <div class="extra-btns">
+                <a asp-area="Main" asp-controller="MainHome" asp-action="Main">
+                    <button class="back-btn">Back Btn</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

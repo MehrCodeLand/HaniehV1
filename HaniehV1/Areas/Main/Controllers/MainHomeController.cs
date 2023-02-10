@@ -85,6 +85,21 @@ namespace HaniehV1.Areas.Main.Controllers
         #region SignOut
 
 
+        [Route("SignOutAdmin")]
+        public IActionResult SignOutAdmin() => View();
+
+        [Route("SignOutAdmin")]
+        [HttpPost]
+        public IActionResult SignOutAdmin(SignOutVm signOut )
+        {
+            if (!_main.IsAdminExist(signOut))
+            {
+                return View();
+            }
+
+            HttpContext.SignOutAsync();
+            return RedirectToAction("Main");
+        }
 
         #endregion
     }

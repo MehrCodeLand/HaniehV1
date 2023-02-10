@@ -14,5 +14,6 @@ namespace Core.Servises.MainSer
         bool IsUsernameValid(SignInVm signIn);
         ShowPaintVm GetPaintShow(int myPaintId);
         Admin GetAdminByUsername(string username );
+        bool IsAdminExist(SignOutVm signOut);
     }
 }

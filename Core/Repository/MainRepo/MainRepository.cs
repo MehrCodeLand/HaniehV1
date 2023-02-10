@@ -55,6 +55,14 @@ namespace Core.Repository.MainRepo
 
             return null;
         }
+
+        public bool IsAdminExist(SignOutVm signOut)
+        {
+            Admin admin = _db.Admins.SingleOrDefault(u => (u.Username == signOut.Username));
+            if(admin == null) { return false; }
+
+            return true;
+        }
         public bool IsUsernameValid(SignInVm signIn)
         {
             string hashPassword = HashPasswordC.EncodePasswordMd5(signIn.Password);
