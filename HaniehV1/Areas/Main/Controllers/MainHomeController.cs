@@ -24,7 +24,8 @@ namespace HaniehV1.Areas.Main.Controllers
             return View(allPaint);
         }
 
-
+        
+        #region Show Paints
 
         [Route("ShowPaint")]
         public IActionResult ShowPaint( int id)
@@ -37,14 +38,16 @@ namespace HaniehV1.Areas.Main.Controllers
             return RedirectToAction("Main"); 
         }
 
+        #endregion
+
         #region login_Admin
 
         [Route("SignIn")]
         public IActionResult SignIn() => View();
 
-        [Route("Signin")]
+        [Route("SignIn")]
         [HttpPost]
-        public IActionResult Signin(SignInVm signIn)
+        public IActionResult SignIn(SignInVm signIn)
         {
             // first validation
             if (!_main.IsUsernameValid(signIn))
@@ -74,9 +77,21 @@ namespace HaniehV1.Areas.Main.Controllers
                 HttpContext.SignInAsync(principal, properties);
             }
 
-            return View();
+            return RedirectToAction("Main");
         }
+
+        #endregion
+
+        #region SignOut
+
+
 
         #endregion
     }
 }
+
+
+
+
+
+

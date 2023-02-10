@@ -128,7 +128,7 @@ namespace HaniehV1.Areas.Admin.Controllers
 
             _admin.CreateAdmin(createAdmin);
             ViewBag.IsAdminValid = true;
-            return View();
+            return RedirectToAction("Main");
         }
         #endregion
 

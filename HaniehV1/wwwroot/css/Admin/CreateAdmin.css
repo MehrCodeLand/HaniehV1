@@ -1,0 +1,235 @@
+@media only screen and (max-device-width: 500px )
+{
+    body {
+        margin : 0px ;
+        display: flex ;
+        flex-direction: column ;
+    }
+    .header {
+        display: flex ;
+        flex-direction: row;
+        background-color: #E7473C;
+    }
+    .logo-staf {
+        flex: 1;
+        display: flex ;
+        flex-direction: row;
+    }
+    .hanieh-title {
+        flex: 2 ;
+        display: flex ;
+        justify-content: center ;
+        align-items: center ;
+        font-family: monospace;
+        font-size: 1rem ; 
+    }
+    .space-right {
+        flex: 1 ;
+    }
+    .logo-content {
+        flex: 1 ;
+        padding: 1rem ;
+    }
+    .logo {
+        border-radius: 0.3rem ;
+        height: 4rem ;
+        width: 4rem ;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .main {
+        display: flex ;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .form-data {
+        background-color: #E7473C;
+        margin-top: 5rem  ;
+        padding: 0.8rem ;
+        border-radius: 0.2rem ;
+        display: flex;
+        flex-direction: column;
+    }
+    .login-form {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem ;
+        font-family: monospace;
+    }
+    .all-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0.7rem ;
+        margin-bottom: 1.99rem ;
+    }
+    .login {
+        padding: 0.2rem 0.9rem ;
+        border: none;
+        background-color: white;
+        border-radius: 0.1rem ;
+        font-family: monospace;
+        font-weight: bold;
+    }
+    .extra-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .back-btn {
+        padding: 0.2rem 1rem ;
+        border-radius: 0.1rem ;
+        border: none;
+        font-family: monospace;
+        font-weight: bold;
+        background-color: #323232;
+        color: #E7473C;
+    }
+    .password {
+        border: none;
+        border-radius: 0.1rem;
+        padding: 0.3rem 0.5rem ;
+    }
+    .username {
+        border: none;
+        border-radius: 0.1rem;
+        padding: 0.3rem 0.5rem ;
+    }
+    input::placeholder {
+        font-family: monospace;
+    }
+    input {
+        font-family: monospace;
+    }
+    label {
+        font-weight: bold;
+    }
+}
+
+
+@media only screen and (min-device-width: 500px )
+{
+    body {
+        margin: 0px ;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header {
+        display: flex ; 
+        flex-direction: row;
+        background-color: #E7473C ;
+    }
+    .logo-staf {
+        flex: 2;
+        display: flex ;
+        flex-direction: row;
+        padding: 1rem ;
+    }
+    .hanieh-title {
+        display: flex ;
+        justify-content: center;
+        align-items: center;
+        flex : 3 ;
+        font-size: 2rem ;
+        font-family: monospace;
+    }
+    .logo-content {
+        flex: 1;
+    }
+    .logo {
+        height: 10rem ;
+        width: 10rem ;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 0.5rem ;
+    }
+    .content-creator {
+        background-color: red ;
+        flex: 1;
+    }
+    .space-right {
+        flex: 1;
+    }
+
+    .main {
+        display: flex ;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .form-data {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #E7473C;
+        padding: 1rem ;
+        margin-top: 3rem ;
+        border-radius: 0.3rem ;
+    }
+    .login-form {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem ;
+        font-family: monospace;
+    }
+    .username {
+        font-size: 1rem;
+        border: none ;
+        padding: 0.3rem 1rem ;
+        padding-left: 0.4rem;
+        border-radius: 0.1rem ;
+    }
+    .password {
+        font-size: 1rem;
+        border: none ;
+        padding: 0.3rem 1rem ;
+        padding-left: 0.4rem;
+        border-radius: 0.1rem ;
+    }
+
+    .all-btn {
+        margin-top: 2rem ;
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        margin-bottom: 4rem ;
+    }
+    .login {
+        font-family: monospace;
+        font-weight: bold;
+        background-color: white;
+        border: none;
+        padding: 0.3rem 1rem  ;
+        border-radius: 0.1rem ;
+    }
+    .back-btn {
+        font-family: monospace;
+        font-weight: bold;
+        background-color: #323232;
+        color: #E7473C;
+        border: none;
+        padding: 0.3rem 1rem  ;
+        border-radius: 0.1rem ;
+    }
+
+    .input-password-div {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.8rem ;
+    }
+    input::placeholder {
+        font-family: monospace;
+    }
+    input {
+        font-family: monospace;
+    }
+    label {
+        font-weight: bold;
+    }
+}

@@ -1,0 +1,55 @@
+﻿@using Data.ViewModels
+@model CreateAdminVm
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/Admin/CreateAdmin.css">
+    <title>Create Admin</title>
+</head>
+<body>
+    <div class="header">
+        <div class="logo-staf">
+            <div class="logo-content">
+                <img class="logo" src="/img/MU9.png">
+            </div>
+            <div class="hanieh-title">
+                HANIEH|Freedome
+            </div>
+            <div class="space-right"></div>
+        </div>
+    </div>
+
+
+    <div class="main">
+        <div class="form-data">
+            <form method="post" class="login-form">
+                <div class="all-input">
+                    <label for="username">Username</label>
+                    <input asp-for="Username" name="username" type="text" class="username" placeholder="Username">
+                </div>
+                <div class="input-password-div">
+                    <label for="password">Password</label>
+                    <input asp-for="Password" name="password" type="text" class="password" placeholder="Password">
+                    <label for="Repassword">Re Password</label>
+                    <input asp-for="RePassword" name="Repassword" type="text" class="password" placeholder="RePassword">
+                </div>
+                <div class="all-btn">
+                    <button type="submit" class="login">Create Admin</button>
+                </div>
+            </form>
+            <div class="extra-btn">
+                <a asp-area="Admin" asp-controller="AdminHome" asp-action="Main">
+                    <button class="back-btn">Back</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
