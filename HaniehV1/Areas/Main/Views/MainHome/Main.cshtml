@@ -50,6 +50,20 @@
                                 SignOut
                             </button>
                         </a>
+                        <a asp-area="Admin" asp-controller="AdminHome" asp-action="Main">
+                            <button style="
+                        padding: 0.3rem 1rem;
+                        border: none;
+                        border-radius: 0.17rem;
+                        background-color: #323232;
+                        color: #beada3;
+                        font-family: monospace;
+                        font-weight: bold;
+"
+                                class="admin-btn">
+                                Admin Page
+                            </button>
+                        </a>
                     }else{
                         <a asp-area="Main" asp-controller="MainHome" asp-action="SignIn">
                             <button style="
